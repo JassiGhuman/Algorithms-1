@@ -5,6 +5,7 @@ public class Q3 extends Thread {
 	private int n;
 	Q3(int n){
 		this.n=n;
+		
 	}
 	public void run(   ) {
 		r=factorial(n);
@@ -14,6 +15,9 @@ public class Q3 extends Thread {
 		for(int i=1;i<=n;i++) {
 			fact*=i;
 		}
+		
+		
+		
 		System.out.println(fact);
 		return fact;	
 	}

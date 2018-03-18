@@ -2,24 +2,49 @@ package geeks;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+//Java program to illustrate
+//internal working of HashMap
+import java.util.HashMap;
 
-public class GFG {
-		public static void main (String[] args) {
-			//code
-		    Scanner scr = new Scanner(System.in);
-		    int t=scr.nextInt();
-		    scr.nextLine();
-		    for(int t_i=0;t_i<t;t_i++){
-		        String s=scr.nextLine();
-		        String words[]=s.split("\\.");
-		        //System.out.println(words[0]+" "+words.length);
-		        System.out.print(words[words.length-1]);
-		        for(int i=words.length-2;i>=0;i--){
-		            System.out.print("."+words[i]);    
-		        }
-		        System.out.println();
-		    }
-		    
-		}
+class Key
+{
+	String key;
+	Key(String key)
+	{
+		this.key = key;
 	}
+
+	@Override
+	public int hashCode()
+	{
+		int hash = (int)key.charAt(0);
+		System.out.println("hashCode for key: "
+						+ key +" = "+ hash);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return key.equals(((Key)obj).key);
+	}
+}
+
+//Driver class
+public class GFG
+{
+	public static void main(String[] args)
+	{
+		HashMap map = new HashMap();
+		map.put(new Key("vishal"), 20);
+		map.put(new Key("sachin"), 30);
+		map.put(new Key("vaibhav"), 40);
+
+		System.out.println();
+		System.out.println("Value for key sachin: " +
+							map.get(new Key("sachin")));
+		System.out.println("Value for key vaibhav: " +
+							map.get(new Key("vaibhav")));
+	}
+}
  

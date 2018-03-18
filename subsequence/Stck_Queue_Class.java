@@ -1,7 +1,5 @@
 package subsequence;
-/*
- * 
- * 
+
 
 
 //Find Max out of each window of size K		
@@ -61,4 +59,4 @@ public class Stck_Queue_Class {
 	
 	
 }
-*/	
+

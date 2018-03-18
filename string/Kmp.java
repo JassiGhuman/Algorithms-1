@@ -13,18 +13,16 @@ public class Kmp {
 					System.out.println("Pattern found at "+(i-j));
 					j=pi[j-1];
 				}
-			}
+			}	
 
 			else{
-				System.out.println(i+" "+j);
+//				/System.out.println(i+" "+j);
 				if(j!=0)
 					j=pi[j-1];
 				else{
 					i++;
 				}
 			}
-			
-			
 		}
 	}
 	public static int[] pi(String s){
@@ -35,7 +33,7 @@ public class Kmp {
 		while(i<a.length){
 			if(s.charAt(i)==s.charAt(len)){
 				a[i]=++len;
-				 i++;
+			 i++;
 			}
 			else{			//mismatch
 				if(len==0)
@@ -47,12 +45,13 @@ public class Kmp {
 			} 
 			
 		}
+		
 		return a;
 	}
 	public static void main(String[] args) {
-		String p="b";
+		String p="baba";
 		//int a[]=pi(p);
-		String s="caaab";
+		String s="bbbbbbbbab";
 		search(p,s);
 		
 	}
