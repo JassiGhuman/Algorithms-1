@@ -15,7 +15,7 @@ public class Optimal_Strategy_Game {
 						sum[i][j]=Math.max(a[i], a[j]);
 					}
 					else {
-						sum[i][j]=Math.max( a[i]+Math.min (sum[i+2][j] , sum[i+1][j-1]) 
+						sum[i][j]=Math.max(a[i]+Math.min (sum[i+2][j] , sum[i+1][j-1]) 
 								, a[j]+Math.min(sum[i][j-2],sum[i+1][j-1]));
 					}
 			}

@@ -42,7 +42,7 @@ public class Plaindrome_partitioning_v2 {
 	return a[n-1];
 	}
 	public static void main(String[] args) {
-		String s= "aba";
+		String s= "abaaa";
 		System.out.println(palindrome_partitioning_v2(s));
 	}
 }

@@ -1,4 +1,7 @@
 package dynamic_programming;
+
+import java.util.Arrays;
+
 //Length of the longest substring without repeating characters
 public class Longest_Rep_Seq {
 	public static int longest_rep(char a[]) {
@@ -24,6 +27,8 @@ public class Longest_Rep_Seq {
 			}
 			
 		}
+		int x[][]=new int [Integer.MAX_VALUE][Integer.MIN_VALUE];
+		Arrays.fill(x, 0);
 		return m[n][n];
 	}
 	public static void main(String[] args) {

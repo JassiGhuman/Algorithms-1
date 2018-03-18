@@ -1,5 +1,5 @@
 package dynamic_programming;
-//To find max sum of a rectangle in 2-D array
+//To find max sum of a rectangle in 2-D array'
 public class Max_sum_rectangle {
 	public static int max_sum_rectangle(int a[][],int r,int c) {
 		int n=r;
