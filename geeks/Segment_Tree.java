@@ -1,6 +1,10 @@
 package geeks;
 
+import java.awt.print.Printable;
+import java.util.Scanner;
+
 public class Segment_Tree {
+
 	public int seg_tree[];
 	public Segment_Tree(int a[]) {
 		// TODO Auto-generated constructor stub
@@ -55,17 +59,47 @@ public class Segment_Tree {
 			y=max_value(current*2+2, mid+1, end);
 		}
 		return seg_tree[current]+Math.max(x, y);
-	}
-	public static void main(String[] args) {
+	}	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int a[]= {0,0,0,0,0};
-		Segment_Tree seg1=new Segment_Tree(a);
-		seg1.update_query(0, a.length-1, 1, 2, a, 100, 0);
-		seg1.update_query(0, a.length-1, 2, 5, a, 100, 0);
-		System.out.println("max:"+seg1.max_value(0, 0, a.length-1));
-		for(int x:seg1.seg_tree) {
-			System.out.println(x);
+		Scanner scr =new Scanner(System.in);
+		int t=scr.nextInt();
+		for(int ti=0;ti<t;ti++){
+			int n=scr.nextInt();
+			int a[]=new int [n];
+			long sum[]=new long[n];
+			for(int i=0;i<n;i++){
+				a[i]=scr.nextInt();
+				sum[i]=a[i];
+				if(i!=0)
+					sum[i]+=sum[i-1];
+			}
+			int result[]=new int [n];
+			for(int i=0;i<n;i++){
+				if(i!=n-1){
+					int r=search(sum,a,i+1,n-1,i);
+					//System.out.println("r:"+r+" i:"+i);
+					result[i+1]+=1;
+					if(r!=n-1){
+						result[r+1]-=1;
+					}
+				}
+				if(i!=0){
+					int r=search(sum,a,0,i-1,i);
+					//System.out.println("r:"+r+" "+i);
+					result[r]+=1;
+					if(r!=n-1){
+						result[i]-=1;
+					}
+				}
+			}
+			for(int i=1;i<n;i++){
+				result[i]+=result[i-1];
+			}
+			for(int x:result)
+				System.out.print(x+" ");
+			System.out.println();
 		}
+		
 	}
 
 }

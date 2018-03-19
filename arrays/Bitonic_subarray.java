@@ -53,6 +53,3 @@ public class Bitonic_subarray {
 	}
 
 }
-
-
-
