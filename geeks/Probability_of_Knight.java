@@ -1,5 +1,8 @@
+// Java program to find the probability 
+// of the Knight to remain inside the 
+// chessboard after taking exactly K 
+// number of steps
 package geeks;
-
 public class Probability_of_Knight {
 	static double chess[][][]=new double[8][8][3];
 	public static double findProb(int x,int y,int n,int count) {
