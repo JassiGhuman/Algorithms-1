@@ -3,7 +3,7 @@ package dynamic_programming;
 public class Two_knapsacks {
 	public static int two_knapsacks(int weight[],int profit[],int weight1,int weight2) {
 		int n=weight.length;
-		int result[][][]=new int[n+1][weight1+1][weight2+2];
+		int result[][][]=new int[n+1][weight1+1][weight2+1];
 		
 			for(int j=0;j<=weight1;j++) {
 				for(int k=0;k<=weight2;k++) {
