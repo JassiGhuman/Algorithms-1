@@ -23,7 +23,9 @@ public class Assembly_scheduling {
                 {0, 9, 2, 8}};
 		int e[] = {10, 12}, x[] = {18, 7};
 		System.out.println(assembly(a, t, e, x));
- 
+
+
+
 	}
 
 }
